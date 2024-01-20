@@ -154,9 +154,18 @@
         </plugin>
 
         <plugin>
+                 <!--Your comment--> 
+                 <!--
           <groupId>org.mortbay.jetty</groupId>
           <artifactId>jetty-maven-plugin</artifactId>
-          <version>8.0.0.M1</version>
+          <version>8.0.0.M1</version>--> 
+                  <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.1</version>
+            <configuration>
+                <source>8</source>
+                <target>8</target>
+            </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
