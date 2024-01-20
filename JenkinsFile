@@ -1,12 +1,19 @@
 pipeline {
     agent any
-
+    def mavenHome=tool name:"maven3.9.6"
     stages {
         stage('Chekout') {
             steps {
                 checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/sureshreddy643/hello-world.git']])
             }
         }
+        stage('Build') {
+            steps {
+                sh "${mavenHome}/bin mvn clean package"
+            }
+        }
+
+
     }
 }
 
