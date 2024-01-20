@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Chekout') {
             steps {
-                
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/sureshreddy643/hello-world.git']])
             }
         }
     }
