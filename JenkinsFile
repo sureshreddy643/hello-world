@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    def mavenHome=tool name:"maven3.9.6"
+tools {
+  maven 'maven3.9.6'
+}
     stages {
         stage('Chekout') {
             steps {
@@ -9,7 +11,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh "${mavenHome}/bin mvn clean package"
+                sh "mvn clean package"
             }
         }
 
