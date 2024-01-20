@@ -17,7 +17,7 @@ tools {
 
 stage('DockerBuild Tomcat') {
             steps {
-                sh "docker build -t java-web-app-docker:BUILD_NUMBER ."
+                sh "docker build -t java-web-app-docker ."
                 sh "sudo docker images"
             }
         }
